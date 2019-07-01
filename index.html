@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--  <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="author" content="Jeffrey Chase">
+  <meta name="description" content="Personal webpage for Jeffrey Chase, a recent graduate of American University with a passion for data science and experience in conducting quantitative research projects, web development, and interactive data visualization">
+  <meta name="keywords" content="data science, web development, Jeffrey Chase, Jeffrey, Chase, statistics, personal webpage, R, python, javascript, d3">
+
+  <meta name="google-site-verification" content="2OYIfT7fe4kr1wypx9kM90OmdCa7DCd4eh3bxGsb5hQ" />
+
+  <title>Jeffrey Chase | Personal Webpage</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/reset.css">
+  <!--  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>-->
+  <!--  <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Inconsolata" rel="stylesheet">-->
+  <script src="scripts/jquery-3.3.1.min.js"></script>
+  <!--  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">-->
+  <link rel="stylesheet" href="styles/base.css">
+  <script src="scripts/script.js"></script>
+</head>
+
+<body class="intro">
+  <header>
+    <div id="name">
+      <h1>
+        <div class='initial'>J</div>
+        <div class='rest'>effrey</div>
+        <div class='initial'>C</div>
+        <div class='rest'>hase</div>
+      </h1>
+      <div id="animated-graphs-intro">
+      </div>
+    </div>
+    <nav>
+
+      <button id="navbutton">
+        <span class="navbar"></span>
+        <span class="navbar"></span>
+        <span class="navbar"></span>
+      </button>
+
+      <ul>
+        <li><a class='current' href="index.html">About</a></li>
+        <li><a href="content/resumes/Jeffrey_Chase_2019_Resume.pdf">Résumé</a></li> <!--      <li><a href="research.html">Research</a></li>-->
+        <li><a href="projects.html">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="introduction">
+      <h2 class="">Hi! I'm Jeffrey</h2>
+      <div class="content ">
+        <p>
+          I'm a recent graduate from American University working in data&nbsp;science. I graduated with a degree in International&nbsp;Studies with minors in Statistics and Arabic Language. Additionally, I had significant coursework in computer science.
+        </p>
+      </div>
+
+    </section>
+    <section id="about-me">
+      <h3 class=""> About Me </h3>
+      <div class='content'>
+        <p>
+          I have experience in making interactive data-driven interfaces, conducting quantitative research projects, and building responsive, dynamic websites. From researching the statistical relationship <a href="#"> between war and US public opinion </a> or building a <a href='#'>set of interactive visualizations showing patterns in world&nbsp;conflicts</a>.
+        </p>
+      </div>
+    </section>
+    <!--
+    <section id="intro" class="ar">
+      <h2>أهلا! أنا جفري</h2>
+      <p> أنا تخرجت من الجامعة الأمريكية في واشنطن وأنا باحث عن وظيفة علم البيانات</p>
+    </section>
+-->
+    <section id="experience">
+
+      <h3> Experience </h3>
+
+      <div class="grid">
+        <h5> Current Position</h5>
+        <div class="row">
+          <div class="exp item">
+            <div class='title'></div>
+            <div class='place'></div>
+            <div class='dates'></div>
+          </div>
+        </div>
+        <div class='tabbed row'>
+          <div class="tab exp item"></div>
+          <div class="tab exp item"></div>
+          <div class="tab exp item"></div>
+          <div class="tab exp item"></div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <section id="projects">
+      <h3> Projects </h3>
+      <div class="grid">
+        <h4> Data Visualization </h4>
+        <div class="row">
+          <div class="item">
+            <h5> Gross Domestic Happiness </h5>
+            <p>
+              Set of interactive data visualizations built with <b>d3.js</b>, <b>leaflet.js</b>, and <b>turf.js</b> with some data munging performed in <b>R</b>.
+            </p>
+            <div class="bottom">
+              <a class='photolink' href="#" rel="nofollow">
+                <img src="content/img/previews/gdh_screencapture.png" alt="Screen capture of webpage with title 'Gross Domestic Happiness', world with colored countries, and bump chart">
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="subitem">
+              <h5> World in Conflict </h5>
+              <p>
+                Set of interactive data visualizations built with d3.js with data munging performed in <b>Python</b>.
+              </p>
+            </div>
+            <div class="bottom">
+              <a class="photolink" , href="#" , rel="nofollow">
+                <img src="content/img/previews/world_conflicts_screencapture.png" alt="example data visualization from the project">
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="subitem">
+              <h5> Data Analysis Dashboard </h5>
+              <p>
+                Set of interactive data visualizations built with d3.js with data munging performed in <b>Python</b>.
+              </p>
+            </div>
+            <div class="subitem">
+              <a class="photolink " , href="#" , rel="nofollow">
+                <img src="content/img/previews/world_conflicts_screencapture.png" alt="example data visualization from the project">
+              </a>
+            </div>
+          </div>
+        </div>
+        <h4> Research </h4>
+        <div class="row">
+          <div class="item">
+            <div class="subitem">
+
+              <h5> US Counterterrorism Spending </h5>
+              <p> In this research project, we investigated the factors that motivate the US counterterrorism budget. Using historical budget data, we demonstrate how this spending has drastically increased following the attacks on 9/11 and has remained high even as the number of attacks and casualties from terrorist attacks has declined in both the United States and by Foreign Terrorist Organizations abroad. </p>
+            </div>
+            <div class="subitem">
+
+              <a class="paperlink" href="content/articles/Chase_Holton_Capstone.pdf">
+
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="subitem">
+              <h5> Presidential Public Opinion </h5>
+              <p> Insert Description Here </p>
+            </div>
+            <div class="bottom">
+              <a class="paperlink" href="content/articles/Chase_Rally_Paper.pdf" rel="nofollow">
+
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!--
+  <article>
+    <section id="intro">
+      <h2>About Me</h2>
+      <p>
+        I am a senior at American University graduating this May and majoring in International Studies with minors in Statistics and Arabic Language. Additionally, I have taken signficant coursework in computer science: <span class="code lang">Python</span>, <span class="code language">Java</span>, web programming (<span class="code lang">JavaScript</span>, <span class="code lang">CSS</span>, <span class="code lang">HTML</span>, <span class="code lang">PHP</span>), information visualization (<span class="code lang"> d3.js</span>), and geographic information systems (ArcGIS).
+      </p>
+      <p>
+        Within international studies, my research interests include conflict, terrorism, rentier states, and the Middle East and North Africa (MENA) region, and I specialize in using quantitative research methods to study these areas (with the use of <span class="code lang">Python</span> and <span class="code lang">R</span>). In statistics, I have experience in regression analysis and statistical machine learning. I also have experience in front-end web development, UI development, interactive and static data visualization, and basic algorithms and data structures.
+      </p>
+    </section>
+
+  </article>
+  <footer>
+    <div>
+      <h3>Jeffrey Chase</h3>
+      <ul>
+        <li><a href="mailto:jc7437a@student.american.edu">jc7437a@student.american.edu</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/jeffrey-chase-7b0656160/" target="_blank">
+            <span class="fab fa-linkedin"></span></a>
+          <a href="https://github.com/jeffrey-chase" target="_blank">
+            <span class="fab fa-github"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+-->
+</body>
+
+</html>
