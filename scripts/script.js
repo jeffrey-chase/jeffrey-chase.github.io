@@ -63,8 +63,7 @@ $(() => {
     window.setTimeout(() => {
       $(document.body).removeClass('intro');
     }, TIME_TO_END)
-
-
+    
   }, TIME_TO_CHANGE_BARS);
 
 
@@ -77,24 +76,29 @@ $(() => {
         return true
       }
     }
-    
     return false;
-
-  }
-
-  // Function to show the element when it is scrolled into view
-  function scrollToShow(i, e) {
-    
   }
 
   let allContent = $('.content, .row, h2, h3, h4');
   allContent.addClass('pre');
 
+  window.setTimeout(() => $('#introduction').children().removeClass('pre'), TIME_TO_CHANGE_BARS + TIME_TO_END + 500);
+
   $(window).scroll((e) => {
     let next = $('.pre').first();
-    
-    if(hasBeenScrolledTo(next)){
+
+
+    if (hasBeenScrolledTo(next)) {
       next.removeClass('pre');
+    }
+
+    const header = $('header');
+    const headerSwitch = header.outerHeight() * 0.9;
+
+    if (parseFloat(window.scrollY) > 70 && !header.hasClass('stuck')) {
+      header.addClass('stuck');
+    } else if (parseFloat(window.scrollY) < 70) {
+      header.removeClass('stuck');
     }
   });
 
