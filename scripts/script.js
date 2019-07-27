@@ -101,5 +101,4 @@ $(() => {
       header.removeClass('stuck');
     }
   });
-
 })
