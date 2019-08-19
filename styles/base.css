@@ -122,7 +122,7 @@ body {
   opacity: 1;
   position: relative;
   transition: 1.5s ease-in-out;
-  max-width: 600px;
+  max-width: 60ch;
 }
 
 
@@ -263,9 +263,10 @@ h1 {
   font-size: 1.33em;
 }
 
-h2 {
+h2.hero {
   color: #F092DD;
   font-size: 4.236em;
+  text-shadow: 0 0 4px #F092DD;
 }
 
 h3 {
@@ -336,7 +337,7 @@ footer {
   background: #27272B;
   color: #498A5D;
   font-size: 1.25em;
-  height: 200px;
+  height: 300px;
   text-align: center;
   position: relative;
 }
@@ -425,7 +426,7 @@ nav.show {
 }
 
 .show .navbar:nth-child(3) {
-  transform: rotate(315deg);
+  transform: rotate(-45deg);
   top: auto;
   bottom: 7px;
 }
@@ -784,7 +785,7 @@ h1 .rest {
     font-size: 2em;
   }
 
-  h2 {
+  h2.hero {
     font-size: 6.854em;
   }
 
