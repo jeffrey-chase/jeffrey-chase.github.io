@@ -1,20 +1,26 @@
 @keyframes barmove {
-  0% {
-    /* 		background: #111; */
-    opacity: 0;
-    height: 0;
+  from {
+    width: 1%;
   }
 
-  100% {
-    background: #5EF38C;
-    opacity: 1;
-    height: 80%;
+  to {
+    width: 90%;
+  }
+}
+
+@keyframes barContainer {
+  from {
+    width: 0;
+  }
+  
+  to {
+    width: 90%;
   }
 }
 
 @keyframes introLetters {
   0% {
-        display: none;
+    display: none;
     width: 0;
     opacity: 0;
     transform: translateY(-300px);
@@ -23,7 +29,7 @@
 
   100% {
     display: inline-block;
-    text-shadow: 0.5px 0.5px 1px #86F6A9;
+    text-shadow: 0.5px 0.5px 1px #F4ADE5;
     opacity: 1;
     /* 		position: relative; */
   }
@@ -39,7 +45,7 @@
   to {
     font-size: 1em;
     /* 		color: #52D57B; */
-    text-shadow: 0.5px 0.5px 1px #86F6A9;
+    text-shadow: 0.5px 0.5px 1px #F4ADE5;
     margin: 0 0 !important;
   }
 }
@@ -50,7 +56,7 @@
   }
 
   to {
-    border-bottom: 4px solid #52D57B;
+    border-bottom: 4px solid #F092DD;
     width: 60%;
   }
 }
@@ -110,7 +116,7 @@ html {
 
 body {
   background: #11111f;
-  color: #E1E1F9;
+  color: #E1E1E3;
   font-family: 'Lato', 'Futura', 'Century Gothic', 'Corbel', sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -150,9 +156,9 @@ a {
   transition: 700ms ease-in-out;
 }
 
-a:focus, 
+a:focus,
 a:hover {
-  color: #9AEF99;
+  color: #F4ADE5;
 }
 
 a:focus {
@@ -161,7 +167,7 @@ a:focus {
 }
 
 a::after {
-/*  border-top: 1px solid white;*/
+  /*  border-top: 1px solid white;*/
   content: '';
   bottom: 0;
   left: 0;
@@ -174,7 +180,7 @@ a:hover::after,
 a:focus::after {
   left: 0;
   width: 100%;
-      border-bottom: 0.215em solid #9AEF99;
+  border-bottom: 0.215em solid #F4ADE5;
 }
 
 nav a::before,
@@ -188,15 +194,15 @@ nav a::after {
 }
 
 .box-link {
-  border: 1px solid #73AB84;
+  border: 1px solid #B46EA6;
   border-radius: 0.25em;
   position: relative;
 }
 
 .box-link:hover,
 .box-link:focus {
-  border: 1px solid #5EF38C;
-  color: #5EF38C;
+  border: 1px solid #F4ADE5;
+  color: #F4ADE5;
   transition: 1s ease-in-out;
 
 }
@@ -206,7 +212,7 @@ nav a::after {
   background: none;
   content: none;
   position: absolute;
-  border: 3px solid #5EF38C;
+  border: 3px solid #F4ADE5;
 }
 
 .box-link::before {
@@ -242,7 +248,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #5EF38C;
+  color: #F092DD;
   /*  font-weight: 600;*/
   position: relative;
   transition: 1.5s ease-in-out;
@@ -335,7 +341,7 @@ header.stuck {
 
 footer {
   background: #27272B;
-  color: #498A5D;
+  color: #965B8A;
   font-size: 1.25em;
   height: 300px;
   text-align: center;
@@ -369,7 +375,7 @@ a.buttonlink {
   color: #73AB84;
 }
 
-a [class^='fa']{
+a [class^='fa'] {
   padding: 10px;
   font-size: 1.5em;
   transition: transform 750ms ease-in;
@@ -380,7 +386,7 @@ a:hover [class^='fa'] {
 }
 
 nav {
-  color: #73AB84;
+  color: #B46EA6;
   padding: 10px;
   text-align: right;
   top: 0px;
@@ -465,7 +471,6 @@ nav a {
 nav a:hover,
 nav a:focus {
   border: none;
-  color: white;
   transform: none;
 }
 
@@ -582,7 +587,7 @@ section::before {
 }
 
 h1 {
-  color: #52D57B;
+  color: #F092DD;
   display: inline-flex;
   justify-content: center;
   /*  font-weight: bolder;*/
@@ -621,7 +626,7 @@ h1 .rest {
 
 h1 .initial {
   animation: introInitials 2s ease-in-out;
-  color: #52D57B;
+  color: #F092DD;
   display: inline-block;
   transition-duration: 1s;
   text-align: right;
@@ -661,67 +666,79 @@ h1 .rest {
   min-width: 100px;
 }
 
-#bar-charts {
-  transform: rotate(180deg);
+.bar-holder {
   height: 100%;
-  width: 100%;
+  transform: rotate(-90deg);
+  animation: barContainer 1s ease-in-out 0s;
+  animation-fill-mode: forwards;
+  margin: auto;
   display: flex;
-  flex-flow: row nowrap;
-  position: relative;
+  justify-content: space-evenly;
+  flex-flow: column nowrap;
 }
 
-#bar-charts::before {
-  border-right: 2px solid #86F6A9;
+.intro .bar-holder {
+  height: 80px;
+}
+
+.bar-holder div {
+  background: #F4ADE5;
+  border: 1px solid #D280C1;
+  box-shadow: 0 0 2px #F7C9EE;
+  height: 15%;
+  width:0;
+  margin: 0;
+  animation: barmove 1s cubic-bezier(0.3, 0.5, 0.7, 0.3) 3s infinite alternate;
+}
+
+.bar-holder div:nth-child(2) {
+  animation-delay: 3.25s;
+
+}
+
+.bar-holder div:nth-child(3) {
+  animation-delay: 3.5s;
+}
+
+.bar-holder div:nth-child(4) {
+  animation-delay: 3.75s;
+}
+
+.bar-holder div:nth-child(5) {
+  animation-delay: 4s;
+}
+
+
+.bar-holder::before {
+  border-right: 2px solid #F4ADE5;
   content: '';
   position: absolute;
-  right: 0;
-  bottom: 1px;
-  height: 100%;
+  left: -4px;
+  bottom: -2px;
+  height: 110%;
 }
 
-.intro #bar-charts::before {
-  bottom: 10px;
+.intro .bar-holder::before {
+  bottom: 0;
+  left: -10px;
 }
 
-#bar-charts::after {
-  border-top: 2px solid #86F6A9;
+.bar-holder::after {
+  border-top: 2px solid #F4ADE5;
   content: '';
   top: -3px;
   left: -3px;
   position: absolute;
-
   width: calc(100% + 3px);
 }
 
-.intro #bar-charts::after {
+.intro .bar-holder::after {
   top: -10px;
   left: -10px;
   width: calc(100% + 10px);
 
 }
 
-.bar-container {
-  position: relative;
-  transition-duration: 600ms;
-  transition-timing-function: linear;
-  bottom: 0;
-  width: 15%;
-}
-
-.bar {
-  content: "";
-  width: 80%;
-  animation: barmove ease-in-out 1s;
-  animation-fill-mode: forwards;
-  position: absolute;
-  top: 0;
-}
-
-.intro .bar {
-  box-shadow: 1px 1px 3px rgb(94, 243, 140, 0.8);
-  border: 2px solid #47B669;
-
-}
 
 #introduction {
   margin-bottom: 300px;
@@ -843,7 +860,7 @@ h1 .rest {
   }
 
   #resume-link {
-    border: 1px solid #73AB84;
+    border: 1px solid #B46EA6;
     border-radius: 0.25em;
   }
 
@@ -858,6 +875,9 @@ h1 .rest {
 
   nav ul,
   nav ul.show {
+    font-size: 0.8em;
+    font-weight: bolder;
+    text-transform: uppercase;
     display: inline-block;
     float: right;
     height: auto;
