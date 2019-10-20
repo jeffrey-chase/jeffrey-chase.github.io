@@ -55,4 +55,41 @@ $(() => {
       header.removeClass('stuck');
     }
   });
+
+  let tabButtonHolder = $('.tab-holder');
+  let tabTitles = [];
+  $('.tab .title').each((i, e) => tabTitles.push($(e).text()));
+
+  tabTitles.forEach((e, i) => {
+    let newTab = $('<div></div>').addClass('tab-button').text(e);
+    if (i === 0) newTab.addClass('tab-selected');
+    newTab.appendTo(tabButtonHolder);
+  })
+
+
+
+  let tabButtons = $('.tab-button');
+  let tabButtonArray = [...tabButtons];
+
+  let tabs = $('.tab')
+
+  tabButtons.click((e) => {
+
+    $('tab-selected').removeClass('tab-selected');
+    let toHide = $('.tab-show').removeClass('tab-show');
+
+    let delay = parseInt(toHide.css('transiton-delay'));
+    delay += parseInt(toHide.css('transition-duration'));
+
+
+    let index = tabButtonArray.indexOf(e.target);
+
+    let toShow = tabs[index];
+    tabButtons[index].addClass('tab-selected');
+
+    window.setTimeout(() => {
+      $(toShow).addClass('tab-show');
+    }, delay);
+  })
+
 })

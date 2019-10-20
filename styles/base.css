@@ -1,10 +1,11 @@
+/* Barchart Animations */
 @keyframes barmove {
   from {
     width: 1%;
   }
 
   to {
-    width: 90%;
+    width: 85%;
   }
 }
 
@@ -12,15 +13,15 @@
   from {
     width: 0;
   }
-  
+
   to {
-    width: 90%;
+    width: 85%;
   }
 }
 
+/* Name Animations */
 @keyframes introLetters {
   0% {
-    display: none;
     width: 0;
     opacity: 0;
     transform: translateY(-300px);
@@ -28,7 +29,6 @@
   }
 
   100% {
-    display: inline-block;
     text-shadow: 0.5px 0.5px 1px #F4ADE5;
     opacity: 1;
     /* 		position: relative; */
@@ -50,6 +50,7 @@
   }
 }
 
+/* Link Hover Effects */
 @keyframes underline {
   from {
     width: 0;
@@ -61,6 +62,25 @@
   }
 }
 
+
+@keyframes boxLinkHover {
+  0% {
+    height: 0;
+    width: 0;
+  }
+
+  50% {
+    width: 0;
+    height: 100%;
+  }
+
+  100% {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* Slide Content in on Scrollin */
 @keyframes headingReveal {
   from {
     right: 100%;
@@ -85,22 +105,6 @@
   }
 }
 
-@keyframes boxLinkHover {
-  0% {
-    height: 0;
-    width: 0;
-  }
-
-  50% {
-    width: 0;
-    height: 100%;
-  }
-
-  100% {
-    height: 100%;
-    width: 100%;
-  }
-}
 
 /* Base Settings */
 html {
@@ -131,7 +135,6 @@ body {
   max-width: 60ch;
 }
 
-
 .pre.content,
 .pre.row {
   left: 120% !important;
@@ -150,6 +153,8 @@ p {
   margin: 1.5rem auto;
 }
 
+
+/* Links */
 a {
   display: inline-block;
   position: relative;
@@ -183,16 +188,29 @@ a:focus::after {
   border-bottom: 0.215em solid #F4ADE5;
 }
 
-nav a::before,
-nav a::after {
+button,
+a.buttonlink {
+  background: none;
+  border: 2px solid #73AB84;
+  color: #73AB84;
+}
+
+a [class^='fa'] {
+  padding: 10px;
+  font-size: 1.5em;
+  transition: transform 750ms ease-in;
+}
+
+a [class^='fa']::hover {
   content: none;
 }
 
-nav a::after {
-  border-top-width: 0;
-  left: 50%;
+a:hover [class^='fa'] {
+  transform: translateY(-10px);
 }
 
+
+/* Link that makes a box on hover */
 .box-link {
   border: 1px solid #B46EA6;
   border-radius: 0.25em;
@@ -204,7 +222,6 @@ nav a::after {
   border: 1px solid #F4ADE5;
   color: #F4ADE5;
   transition: 1s ease-in-out;
-
 }
 
 .box-link::after,
@@ -238,11 +255,8 @@ nav a::after {
   animation-fill-mode: forwards;
 }
 
-.ar {
-  direction: rtl;
-  display: none;
-}
 
+/* Headings */
 h2,
 h3,
 h4,
@@ -255,7 +269,6 @@ h6 {
   right: 0;
   /*  margin: 1em 0;*/
 }
-
 
 h2.pre,
 h3.pre,
@@ -305,6 +318,8 @@ h5::after {
   width: 34%;
 }
 
+
+/* 'Sticky' Header */
 header,
 #name {
   background: #11111f;
@@ -368,22 +383,9 @@ footer::before {
   font-weight: bold;
 }
 
-button,
-a.buttonlink {
-  background: none;
-  border: 2px solid #73AB84;
-  color: #73AB84;
-}
 
-a [class^='fa'] {
-  padding: 10px;
-  font-size: 1.5em;
-  transition: transform 750ms ease-in;
-}
 
-a:hover [class^='fa'] {
-  transform: translateY(-10px);
-}
+/* Responsive Navbar with animated hamburger button */
 
 nav {
   color: #B46EA6;
@@ -395,6 +397,16 @@ nav {
   width: 100%;
   transition-duration: 1s;
   z-index: 2;
+}
+
+nav a::before,
+nav a::after {
+  content: none;
+}
+
+nav a::after {
+  border-top-width: 0;
+  left: 50%;
 }
 
 nav.show {
@@ -492,36 +504,11 @@ section {
   margin: 175px auto;
 }
 
-/*
-
-section::before,
-section::after {
-  background: white;
-  content: "";
-  position: absolute;
-}
-*/
-/*
-
-section::after {
-  box-shadow: 0px 3px 5px white;
-  width: 100%;
-  height: 1px;
-  bottom: -20px;
-}
-
-section::before {
-  height: 3px;
-  width: 40px;
-  bottom: 0;
-  right: -10px;
-}
-*/
-
-
+/* Sideways Triangle Background Accent */
 .accent {
   /*  background: #4D4D57;*/
   /*  background: #1B264F;*/
+  background: #392F5A;
   background-image: linear-gradient(-10deg, #392F5A, #52496F, #9C97AC);
   box-shadow: 0px 0px 30px #040408;
   transform: rotate(-45deg);
@@ -532,6 +519,8 @@ section::before {
   height: 90vw;
 }
 
+
+/* Custom Flex Grid */
 .grid,
 .grid > * {
   align-content: stretch;
@@ -552,7 +541,6 @@ section::before {
   flex-flow: column nowrap;
 }
 
-
 .item {
   justify-content: space-between;
   display: flex;
@@ -560,6 +548,57 @@ section::before {
   width: 100%;
 }
 
+
+/* Tab Show/Hide */
+.tabbed {
+  display: relative;
+}
+
+.tab-holder {
+  align-items: stretch;
+  align-content: stretch;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  height: 35px;
+  width: 100%;
+  padding: 5px;
+/*  border: 1px solid white;*/
+}
+
+tab-button {
+  background: #686081;
+  border: 2px solid #d697c8;
+  padding: 10px;
+  transition: all 1s ease-out 250ms;
+
+}
+
+.tab-button:hover, .tab-selected {
+  color: #D697C8;
+}
+
+.tab-selected {
+  background: #33335e;
+  transform: scale(1.1);
+}
+
+.tab {
+  /*  color: #11111f;*/
+  transition: 500ms ease-in 200ms;
+  opacity: 0;
+  position: absolute;
+  top: 20px;
+  will-change: opacity;
+}
+
+.tab.tab-show {
+  /*  color: #E1E1E3;*/
+  opacity: 1;
+}
+
+
+/* Animated Image Links */
 .photolink::after {
   content: none
 }
@@ -575,6 +614,8 @@ section::before {
   transform: translateY(-15px);
   box-shadow: 0 15px 15px #040408;
 }
+
+/* Animated Name */
 
 .intro #name {
   flex-flow: column;
@@ -628,21 +669,24 @@ h1 .initial {
   animation: introInitials 2s ease-in-out;
   color: #F092DD;
   display: inline-block;
+  font-size: 1em !important;
   transition-duration: 1s;
   text-align: right;
 }
 
 h1 .rest {
-  animation: introLetters 2s cubic-bezier(0.1, 0.3, 0.6, 0.2);
-  animation-delay: 2s;
   display: none;
   margin-right: 10px;
 }
 
 .intro h1 .rest {
+  animation: introLetters 2s cubic-bezier(0.1, 0.3, 0.6, 0.2);
+  animation-delay: 2s;
   display: inline-block;
+  font-size: 1em;
 }
 
+/* Bar Chart Animation */
 
 #animated-graphs-intro {
   /* 	background: #ccccff; */
@@ -668,6 +712,7 @@ h1 .rest {
 
 .bar-holder {
   height: 100%;
+  width: 85px;
   transform: rotate(-90deg);
   animation: barContainer 1s ease-in-out 0s;
   animation-fill-mode: forwards;
@@ -679,6 +724,7 @@ h1 .rest {
 
 .intro .bar-holder {
   height: 80px;
+  width: 70px;
 }
 
 .bar-holder div {
@@ -686,18 +732,21 @@ h1 .rest {
   border: 1px solid #D280C1;
   box-shadow: 0 0 2px #F7C9EE;
   height: 15%;
-  width:0;
+  width: 0;
   margin: 0;
-  animation: barmove 1s cubic-bezier(0.3, 0.5, 0.7, 0.3) 3s infinite alternate;
+  animation: barmove 1s ease-in 3s infinite alternate;
 }
 
 .bar-holder div:nth-child(2) {
   animation-delay: 3.25s;
+  animation-duration: 1.5s;
 
 }
 
 .bar-holder div:nth-child(3) {
   animation-delay: 3.5s;
+  animation-duration: 2s;
+
 }
 
 .bar-holder div:nth-child(4) {
@@ -706,8 +755,9 @@ h1 .rest {
 
 .bar-holder div:nth-child(5) {
   animation-delay: 4s;
-}
+  animation-duration: 1.25s;
 
+}
 
 .bar-holder::before {
   border-right: 2px solid #F4ADE5;
@@ -739,7 +789,7 @@ h1 .rest {
 
 }
 
-
+ /* Introduction Section */
 #introduction {
   margin-bottom: 300px;
 }
@@ -749,43 +799,11 @@ h1 .rest {
   font-size: 1.125em;
 }
 
-#transition-container {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-@keyframes transition {
-  0% {
-    border-radius: 50%;
-    width: 0;
-    height: 0;
-    opacity: 1;
-  }
-
-  100% {
-    border-radius: 0;
-    width: 500vw;
-    height: 500vw;
-    opacity: 0;
-  }
-
-}
-
-#transition {
-  animation: transition 2s ease-in-out;
-  background: #5EF38C;
-}
-
+/* When viewport 800px or wider */
 @media only screen and (min-width: 800px) {
 
+  /* Body Size */
   body {
     font-size: 1rem;
   }
@@ -794,6 +812,8 @@ h1 .rest {
     margin: 100px 15%;
   }
 
+  
+  /* Headings */
   .intro h1 {
     font-size: 4.166em;
   }
@@ -826,27 +846,8 @@ h1 .rest {
     margin-right: 22px;
   }
 
-  /*
-  section::before,
-  section::after {
-    box-shadow: none;
-  }
-
-  section::after {
-    height: 60px;
-    width: 3px;
-    bottom: -10px;
-    right: 0;
-  }
-
-  section::before {
-    height: 3px;
-    width: 60px;
-    bottom: 0;
-    right: -10px;
-  }
-*/
-
+  
+  /* Navbar */
   nav {
     /*    background-image: url(../content/img/backgrounds/diagonal-lines.svg);*/
     border: none;
@@ -897,7 +898,7 @@ h1 .rest {
     margin-left: 30px;
   }
 
-
+ /* Flex grid */
   .grid,
   .grid > * {
     display: flex;
