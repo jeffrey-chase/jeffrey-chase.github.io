@@ -1,33 +1,37 @@
 $(() => {
 
+  // Set hamburger menu click action
   $('#navbutton').click(() => {
     $('nav').toggleClass('show');
   })
 
-
+  // Time between window load and bar moving
   const BAR_DELAY = 1000;
   const TIME_TO_END = 7000;
-  // After 3 seconds, start changing the bars
   // Ends the animation and shows the main page
 
+  // Hide the bar holder so it can be shown after the delay
   $('.bar-holder div').hide()
 
+  // Show the barholder after the delay
   window.setTimeout(() => {
     $('.bar-holder div').show();
   }, BAR_DELAY)
+
+  // Show the main content and hide the animation after a delay
   window.setTimeout(() => {
     $(document.body).removeClass('intro');
   }, TIME_TO_END)
 
 
-
+  // Function to determine if an element has been scrolled to
   function hasBeenScrolledTo(e) {
     let element = $(e);
 
-    if (element.hasClass('pre')) {
+    if (element.hasClass('pre')) { // hasn't been scrolled to yet
       let top = element[0].getBoundingClientRect().top;
       if (top < $(window).innerHeight()) {
-        return true
+        return true;
       }
     }
     return false;
@@ -60,8 +64,9 @@ $(() => {
   let tabTitles = [];
   $('.tab .title').each((i, e) => tabTitles.push($(e).text()));
 
+
   tabTitles.forEach((e, i) => {
-    let newTab = $('<div></div>').addClass('tab-button').text(e);
+    let newTab = $('<div></div>').addClass('tab-button').text(""+(i+1));
     if (i === 0) newTab.addClass('tab-selected');
     newTab.appendTo(tabButtonHolder);
   })
@@ -72,10 +77,11 @@ $(() => {
   let tabButtonArray = [...tabButtons];
 
   let tabs = $('.tab')
+  let tabsArray = [...tabs];
 
   tabButtons.click((e) => {
 
-    $('tab-selected').removeClass('tab-selected');
+    $('.tab-selected').removeClass('tab-selected');
     let toHide = $('.tab-show').removeClass('tab-show');
 
     let delay = parseInt(toHide.css('transiton-delay'));
@@ -84,8 +90,11 @@ $(() => {
 
     let index = tabButtonArray.indexOf(e.target);
 
-    let toShow = tabs[index];
-    tabButtons[index].addClass('tab-selected');
+    let toShow = tabsArray[index];
+    console.log(toShow);
+    $(toShow).addClass('tab-show');
+
+    $(tabButtonArray[index]).addClass('tab-selected');
 
     window.setTimeout(() => {
       $(toShow).addClass('tab-show');
