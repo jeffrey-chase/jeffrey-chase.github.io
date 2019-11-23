@@ -493,7 +493,7 @@ nav a::after {
 .current {}
 
 main {
-  margin: 75px 5%;
+  padding: 75px 5%;
   overflow-x: hidden;
   /*  opacity: 0;*/
 }
@@ -637,7 +637,14 @@ section {
 .tab-selected::before,
 .tab-selected::after {
   z-index: 2;
-  box-shadow: 2px 2px 10px #F092DD;
+}
+
+.tab-selected::after {
+  box-shadow: 7px 0 9px #f092dd;
+}
+
+.tab-selected::before {
+  box-shadow: -7px 0 9px #f092dd;
 }
 
 .tab {
@@ -664,6 +671,20 @@ section {
   height: auto;
   width: auto;
 
+}
+
+.exp .title {
+  font-size: 1.1618em;
+  font-weight: bold;
+  padding: 0 0 1em 0;
+}
+
+.exp .dates {
+/*  font-style: italic;*/
+  font-size: 0.8em;
+  text-transform: uppercase;
+  padding: 0.25rem 0;
+  margin: 0.25rem 0;
 }
 
 
@@ -878,7 +899,7 @@ h1 .rest {
   }
 
   main {
-    margin: 100px 15%;
+    padding: 100px 15%;
   }
 
 
