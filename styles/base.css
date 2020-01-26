@@ -1027,6 +1027,7 @@ h1 .rest {
     margin-right: -2px;
     padding: 5px 0 5px 2px !important;
     width: 100%;
+    max-width: 30px;
     z-index: 1;
     /*  border: 1px solid white;*/
   }
